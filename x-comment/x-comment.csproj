@@ -1,8 +1,37 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>x_comment</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="wwwroot\data\data.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\cldr-data\supplemental.js" />
+    <None Include="wwwroot\cldr-data\tr.js" />
+    <None Include="wwwroot\cldr\cldr.js" />
+    <None Include="wwwroot\cldr\event.js" />
+    <None Include="wwwroot\cldr\supplemental.js" />
+    <None Include="wwwroot\cldr\unresolved.js" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\comment.css" />
+    <None Include="wwwroot\css\comment.min.css" />
+    <None Include="wwwroot\globalize\currency.js" />
+    <None Include="wwwroot\globalize\date.js" />
+    <None Include="wwwroot\globalize\globalize.js" />
+    <None Include="wwwroot\globalize\message.js" />
+    <None Include="wwwroot\globalize\number.js" />
+    <None Include="wwwroot\globalize\plural.js" />
+    <None Include="wwwroot\globalize\relative-time.js" />
+    <None Include="wwwroot\globalize\unit.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\js\jquery-3.5.1.min.js" />
+    <None Include="wwwroot\js\x-comment.js" />
+  </ItemGroup>
 
 </Project>

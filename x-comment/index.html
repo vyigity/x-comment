@@ -5,8 +5,13 @@
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/comment.css" rel="stylesheet" />
+    <link href="css/fontawesome.min.css" rel="stylesheet" />
+    <link href="css/brands.css" rel="stylesheet" />
+    <link href="css/solid.css" rel="stylesheet" />
+
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scomment.js"></script>
+    <script src="js/x-comment.js"></script>
 
     <script src="cldr/cldr.js"></script>
     <script src="cldr/event.js"></script>
@@ -18,6 +23,10 @@
     <script src="globalize/currency.js"></script>
     <script src="globalize/date.js"></script>
 
+    <script src="cldr-data/supplemental.js"></script>
+    <script src="cldr-data/tr.js"></script>
+
+    <script src="data/data.js"></script>
 </head>
 <body>
 
@@ -25,9 +34,20 @@
 
         Globalize.locale("tr");
 
+        $(document).ready(function () {
 
+            $("#xcomment").xcomment({
+
+                mode: "array",
+                items: comments,
+                allowInsert: true
+
+            });
+        });
 
     </script>
+
+    <div id="xcomment" ></div>
 
 </body>
 </html>

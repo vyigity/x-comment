@@ -11,7 +11,7 @@ function XComment(configuration) {
 
     let sendButtonText = "GÖNDER";
     let inputTextAreaPlaceHolder = "Yorum giriniz...";
-    let replyButtonText = "Gönder";
+    let sendReplyButtonText = "Gönder";
     let cancelButtonText = "İptal";
     //let updateButtonText = "Güncelle";
     let replyButtonText = "Yanıtla";
@@ -29,9 +29,9 @@ function XComment(configuration) {
 
                 inputTextAreaPlaceHolder = configuration.texts.inputTextAreaPlaceHolder;
             }
-            if (typeof configuration.texts.replyButtonText !== 'undefined') {
+            if (typeof configuration.texts.sendReplyButtonText !== 'undefined') {
 
-                replyButtonText = configuration.texts.replyButtonText;
+                sendReplyButtonText = configuration.texts.sendReplyButtonText;
             }
             if (typeof configuration.texts.cancelButtonText !== 'undefined') {
 
@@ -122,7 +122,7 @@ function XComment(configuration) {
             currentReplyElement = null;
         });
 
-        commentElement.append($('<a class="avatar"><i class= "glyphicon glyphicon-user"></i></a>'));
+        commentElement.append($('<a class="avatar"><i class= "fas fa-user"></i></a>'));
         contentElement.append(authorElement);
         contentElement.append(metadataElement);
         contentElement.append(textElement);
@@ -144,7 +144,7 @@ function XComment(configuration) {
         let metadataElement = $('<div class="metadata">').text(Globalize.formatDate(new Date(item.created), { datetime: "short" }));
         let textElement = $('<div class="text">').text(item.content);
 
-        commentElement.append($('<a class="avatar"><i class= "glyphicon glyphicon-user"></i></a>'));
+        commentElement.append($('<a class="avatar"><i class= "fas fa-user"></i></a>'));
         contentElement.append(authorElement);
         contentElement.append(metadataElement);
         contentElement.append(textElement);
@@ -173,8 +173,8 @@ function XComment(configuration) {
         //        }
         //    });
 
-            $(actionsElement).append(saveElement);
-        }
+        //    $(actionsElement).append(saveElement);
+        //}
 
         if (typeof configuration.allowReply === 'undefined' || configuration.allowReply) {
 
@@ -273,10 +273,11 @@ function XComment(configuration) {
     }
 
     let createControl = function createControl() {
-       
-        configuration.dataSource().done(function (data) {
 
-            that.items = data;
+        if (configuration.mode == "array") {
+
+            that.items = configuration.items;
+
             let element = $('<div class="ui comments">');
 
             if (typeof configuration.width !== 'undefined') {
@@ -284,7 +285,7 @@ function XComment(configuration) {
                 $(that.rootElement).css('width', configuration.width + "px");
             }
 
-            $.map(data, function (v, i) {
+            $.map(that.items, function (v, i) {
 
                 if (v.parent == null) {
 
@@ -301,15 +302,45 @@ function XComment(configuration) {
 
             $(that.rootElement).append(element);
 
-        }).fail(function (data) {
+        } else {
 
-            if (typeof configuration.onError !== 'undefined') {
+            configuration.dataSource().done(function (data) {
 
-                configuration.onError(data);
-            } else {
-                throw "Data cannot be fetched";
-            }
-        });
+                that.items = data;
+                let element = $('<div class="ui comments">');
+
+                if (typeof configuration.width !== 'undefined') {
+
+                    $(that.rootElement).css('width', configuration.width + "px");
+                }
+
+                $.map(data, function (v, i) {
+
+                    if (v.parent == null) {
+
+                        $(element).append(createChildrenDomElement(null, v));
+                    }
+                });
+
+                $(that.rootElement).html('');
+
+                if (typeof configuration.allowInsert !== 'undefined' && configuration.allowInsert) {
+
+                    $(that.rootElement).append(createInputForm());
+                }
+
+                $(that.rootElement).append(element);
+
+            }).fail(function (data) {
+
+                if (typeof configuration.onError !== 'undefined') {
+
+                    configuration.onError(data);
+                } else {
+                    throw "Data cannot be fetched";
+                }
+            });
+        }
     }
 
     this.refresh = function () {
@@ -323,7 +354,7 @@ function XComment(configuration) {
     return this;
 }
 
-$.fn.scomment = function (configuration) {
+$.fn.xcomment = function (configuration) {
 
     var obj = $(this[0]);
 
