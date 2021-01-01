@@ -18,8 +18,6 @@
     <None Include="wwwroot\cldr\unresolved.js" />
     <None Include="wwwroot\css\bootstrap.min.css" />
     <None Include="wwwroot\css\bootstrap.min.css.map" />
-    <None Include="wwwroot\css\comment.css" />
-    <None Include="wwwroot\css\comment.min.css" />
     <None Include="wwwroot\globalize\currency.js" />
     <None Include="wwwroot\globalize\date.js" />
     <None Include="wwwroot\globalize\globalize.js" />
