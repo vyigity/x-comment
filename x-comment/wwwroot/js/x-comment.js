@@ -59,7 +59,7 @@ function XComment(configuration) {
         let inputTextArea = $('<textarea rows="4" class="form-control" style="margin-bottom:10px" placeholder="' + inputTextAreaPlaceHolder + '">'); 
         let button = $('<button class="btn btm-md btn-primary" type="button">' + sendButtonText+'</button>').click(function () {
 
-            let def = configuration.onInserting($(inputTextArea).val());
+            let def = configuration.onInserting(that, $(inputTextArea).val());
 
             def.done(function () {
 
@@ -94,12 +94,12 @@ function XComment(configuration) {
 
         textElement.append(textInputElement);
 
-        let replyActionElement = $('<a class="save">' + replyButtonText + '</a>').click(function () {
+        let replyActionElement = $('<a class="save">' + sendReplyButtonText + '</a>').click(function () {
 
             if (typeof configuration.onReplied !== 'undefined') {
 
                 let value = $(textInputElement).val();
-                let def = configuration.onReplied(item, value);
+                let def = configuration.onReplied(that, item, value);
 
                 def.done(function () {
 
@@ -188,7 +188,7 @@ function XComment(configuration) {
 
                 if (typeof configuration.onReplying !== 'undefined') {
 
-                    configuration.onReplying({ instance: that, item: item });
+                    configuration.onReplying(that, item);
                 }
 
                 let replyComment = createReplyComment(item);
@@ -219,7 +219,7 @@ function XComment(configuration) {
 
                     if (typeof configuration.onDeleting !== 'undefined') {
 
-                        let def = configuration.onDeleting(item);
+                        let def = configuration.onDeleting(that, item);
 
                         def.done(function () {
 

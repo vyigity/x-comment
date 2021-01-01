@@ -34,6 +34,8 @@
 
         Globalize.locale("tr");
 
+        var currentId = 100;
+
         $(document).ready(function () {
 
             $("#xcomment").xcomment({
@@ -41,8 +43,65 @@
                 mode: "array",
                 items: comments,
                 allowInsert: true,
-                width:600
+                authorName: "Veli Yigit Yolcu",
+                width: 600,
+                onInserting: function (instance, value) {
 
+                    let def = $.Deferred();
+
+                    instance.items.splice(0, 0,
+                        {
+                            id: currentId,
+                            parent: null,
+                            deletable: true,
+                            content: value,
+                            created: new Date().toJSON(),
+                            fullName: "Veli Yigit Yolcu"
+                        });
+
+                    currentId++;
+
+                    def.resolve();
+
+                    return def;
+                },
+                onReplied: function (instance, item, value) {
+
+                    let def = $.Deferred();
+
+                    instance.items.push(
+                        {
+                            id: currentId,
+                            parent: item.id,
+                            deletable: true,
+                            content: value,
+                            created: new Date().toJSON(),
+                            fullName: "Veli Yigit Yolcu"
+                        }
+                    );
+
+                    currentId++;
+
+                    def.resolve();
+
+                    return def;
+                },
+                onDeleting: function (instance, item) {
+
+                    let def = $.Deferred();
+
+                    for (var i = 0; i < instance.items.length; i++) {
+
+                        if (instance.items[i].id === item.id) {
+
+                            instance.items.splice(i, 1);
+                        }
+                    }
+
+                    def.resolve();
+
+                    return def;
+                }
             });
         });
 
