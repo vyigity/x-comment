@@ -38,7 +38,7 @@ Configuration- Plugin
         item: Comment about to be deleted.
 * onError: Is triggered on error that occurs in functions that return a jquery Deferred object. Deferred object must be used with reject function.
     Parameters: 
-        data: Deferred nesnesinin reject fonksiyonu aracılığıyla gönderilen değerdir.
+        data: The value sent through the reject function of the Deferred object.
 * texts: Can be configured text in plugin. A javascript object. (optional)
 
 Configuration - texts (optional)
