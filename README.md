@@ -50,7 +50,7 @@ Configuration - texts (optional)
 * replyButtonText: Determines the text on the button that enables the answering process.
 * deleteButtonText: Determines the text on the button that allows the comments to be deleted.
 
-Ayarlar - items 
+Configuration - items 
 
 * id: A unique value of a comment item.
 * parent: Parent value of a comment item.
