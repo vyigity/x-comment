@@ -1,4 +1,4 @@
-X-COMMENT JQUERY EKLENTİSİ - X-COMMENT JQUERY PLUGIN
+# X-COMMENT JQUERY EKLENTİSİ - X-COMMENT JQUERY PLUGIN
 
 x-comment ile kullanıcıların yorumları birbirlerine yanıt verecek şekilde hiyerarşik olarak gösterilebilmektedir. Yanıtlamada seviye sınırı yoktur. x-comment yeni yorum eklenmesine, yorumların yanıtlanmasına olanak verir ve tamamen json ve javascript nesneleri üzerinden çalışır. Aşağıdaki GitHub bağlantısından kodlara erişilebilir.
 
