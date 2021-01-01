@@ -1,6 +1,67 @@
-# X-COMMENT JQUERY EKLENTİSİ - X-COMMENT JQUERY PLUGIN
+# X-COMMENT JQUERY PLUGIN
 
-x-comment ile kullanıcıların yorumları birbirlerine yanıt verecek şekilde hiyerarşik olarak gösterilebilmektedir. Yanıtlamada seviye sınırı yoktur. x-comment yeni yorum eklenmesine, yorumların yanıtlanmasına olanak verir ve tamamen json ve javascript nesneleri üzerinden çalışır. Aşağıdaki GitHub bağlantısından kodlara erişilebilir.
+With x-comment, users' comments can be displayed hierarchically and users can respond to each other. There is no level limit while answering. x-comment allows adding new comments, reply to comments, and runs entirely on json and javascript objects.
+
+Website:
+
+http://vyigity.blogspot.com/2021/01/x-comment-jquery-icin-yorum-tartsma.html
+
+Dependency
+
+* Jquery
+* Bootstrap
+* Fontawesome
+* Globalize
+
+Configuration- Plugin
+
+* mode: Can be set as "array" or "remote". With "array" value, data process locally by using the javascript array given to the extension. This method can be used for batch input and output operations. The data is accessed by running the function that returns Jquery Deferred in the dataSource field with "remote" value. (required)
+* items: In "array" mode, data is given to the extension here. Also, after the data is loaded in "remote" mode, it can be read as a javascript array.(required in array mode)
+* dataSource: Can be set as a function that returns a jquery Deferred object. Data is obtained by running this function by the plugin.(required in remote mode)
+* authorName: The name written here is used by the plugin when responding. (required)
+* width: It allows the size of the plugin to be set to px. (optional)
+* allowInsert: Can be set as "true/false". It allows to show the form that enables inserting. (optional - Default:true)
+* allowReply: Can be set as "true/false". Ensures that comments can be answered or not. (optional - Default:true)
+* allowDelete: Can be set as "true/false". Ensures that comments can be deleted or not. (optional - Default:true)
+* onInserting: Can be set as a function that returns a jquery Deferred object. Is triggered when adding a new record.
+    Parameters: 
+        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
+        value: Value that is typed by user.
+* onReplied: Can be set as a function that returns a jquery Deferred object. Is triggered when replying to a comment.
+    Parameters: 
+        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
+        value: Value that is typed by user.
+        item: Comment that is answered to.
+* onDeleting: Can be set as a function that returns a jquery Deferred object. Is triggered  when deleting a comment.
+    Parameters: 
+        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
+        item: Comment about to be deleted.
+* onError: Is triggered on error that occurs in functions that return a jquery Deferred object. Deferred object must be used with reject function.
+    Parameters: 
+        data: Deferred nesnesinin reject fonksiyonu aracılığıyla gönderilen değerdir.
+* texts: Can be configured text in plugin. A javascript object. (optional)
+
+Configuration - texts (optional)
+
+* sendButtonText: Determines the text on the button in the new comment creation section.
+* inputTextAreaPlaceHolder: Allows editing of placeholder that appears in comment text area.
+* sendReplyButtonText: Determines the text on the reply send button.
+* cancelButtonText: Determines the text on the button that enables the cancellation of the response..
+* replyButtonText: Determines the text on the button that enables the answering process.
+* deleteButtonText: Determines the text on the button that allows the comments to be deleted.
+
+Ayarlar - items 
+
+* id: A unique value of a comment item.
+* parent: Parent value of a comment item.
+* deletable: Can be set as "true/false". The value that indicates the comment that can be deleted or not.
+* content: Content of a comment item.
+* created: Creation date time of a comment item. Value must be formatted as JSON. For example, "2020-12-31T20:52:00Z"
+* fullName: User name of owner of comment item.
+
+# X-COMMENT JQUERY EKLENTİSİ
+
+x-comment ile kullanıcıların yorumları birbirlerine yanıt verecek şekilde hiyerarşik olarak gösterilebilmektedir. Yanıtlamada seviye sınırı yoktur. x-comment yeni yorum eklenmesine, yorumların yanıtlanmasına olanak verir ve tamamen json ve javascript nesneleri üzerinden çalışır.
 
 Website:
 
