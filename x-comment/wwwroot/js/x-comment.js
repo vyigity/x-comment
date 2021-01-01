@@ -1,6 +1,7 @@
 ﻿//Veli Yigit Yolcu
 //29.12.2020
 //vyigity
+//1.0.0
 
 function XComment(configuration) {
 
