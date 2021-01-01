@@ -2,6 +2,10 @@
 
 x-comment ile kullanıcıların yorumları birbirlerine yanıt verecek şekilde hiyerarşik olarak gösterilebilmektedir. Yanıtlamada seviye sınırı yoktur. x-comment yeni yorum eklenmesine, yorumların yanıtlanmasına olanak verir ve tamamen json ve javascript nesneleri üzerinden çalışır. Aşağıdaki GitHub bağlantısından kodlara erişilebilir.
 
+Website:
+
+http://vyigity.blogspot.com/2021/01/x-comment-jquery-icin-yorum-tartsma.html
+
 GitHub:
 
 https://github.com/vyigity/x-comment
