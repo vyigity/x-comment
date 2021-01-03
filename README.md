@@ -17,7 +17,7 @@ Configuration- Plugin
 
 * mode: Can be set as "array" or "remote". With "array" value, data process locally by using the javascript array given to the extension. This method can be used for batch input and output operations. The data is accessed by running the function that returns Jquery Deferred in the dataSource field with "remote" value. (required)
 * items: In "array" mode, data is given to the extension here. Also, after the data is loaded in "remote" mode, it can be read as a javascript array.(required in array mode)
-* dataSource: Can be set as a function that returns a jquery Deferred object. Data is obtained by running this function by the plugin.(required in remote mode)
+* dataSource: Can be set as a function that returns a jquery Deferred object. Data is obtained by running this function by the plugin. Data must be sent as parameter to promise resolve function.(required in remote mode)
 * authorName: The name written here is used by the plugin when responding. (required)
 * width: It allows the size of the plugin to be set to px. (optional)
 * allowInsert: Can be set as "true/false". It allows to show the form that enables inserting. (optional - Default:true)
@@ -82,7 +82,7 @@ Ayarlar - Eklenti
 
 * mode: "array" veya "remote" değerlerini alabilir. "array" değerinde eklentiye verilen javascript array kullanılarak lokal olarak işlem yapılır. Toplu giriş çıkış işlemler için bu yöntem kullanılabilir. "remote" değerinde dataSource alanındaki Jquery Deferred döndüren fonksiyon çalıştırılarak veriye ulaşılır. (Zorunlu)
 * items: "array" modda eklentiye veri buradan verilir. Ayrıca "remote" modda veri yüklendikten sonra buradan javascript array olarak okunabilir.(Array modda zorunlu)
-* dataSource: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Eklenti tarafından bu fonksiyon çalıştırılarak veri elde edilir.(Remote modda zorunlu)
+* dataSource: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Eklenti tarafından bu fonksiyon çalıştırılarak veri elde edilir. Veri promise nesnesinin resolve fonksiyonuna parametre olarak gönderilmelidir.(Remote modda zorunlu)
 * authorName: Yanıtlama yapılırken eklenti tarafından burada yazan isim kullanılır. (Zorunlu)
 * width: Eklentinin boyutunun px olarak ayarlanması sağlar. (Zorunlu değil)
 * allowInsert: "true/false" değeri alabilir. Giriş yapılmasını sağlayan formun gösterilmesini sağlar. (Zorunlu değil - Default:true)
