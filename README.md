@@ -23,22 +23,22 @@ Configuration- Plugin
 * allowInsert: Can be set as "true/false". It allows to show the form that enables inserting. (optional - Default:true)
 * allowReply: Can be set as "true/false". Ensures that comments can be answered or not. (optional - Default:true)
 * allowDelete: Can be set as "true/false". Ensures that comments can be deleted or not. (optional - Default:true)
-* onInserting: Can be set as a function that returns a jquery Deferred object. Is triggered when adding a new record.
-    Parameters: 
-        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
-        value: Value that is typed by user.
-* onReplied: Can be set as a function that returns a jquery Deferred object. Is triggered when replying to a comment.
-    Parameters: 
-        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
-        value: Value that is typed by user.
-        item: Comment that is answered to.
-* onDeleting: Can be set as a function that returns a jquery Deferred object. Is triggered  when deleting a comment.
-    Parameters: 
-        instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.
-        item: Comment about to be deleted.
-* onError: Is triggered on error that occurs in functions that return a jquery Deferred object. Deferred object must be used with reject function.
-    Parameters: 
-        data: The value sent through the reject function of the Deferred object.
+* onInserting: Can be set as a function that returns a jquery Deferred object. Is triggered when adding a new record.</br>
+    Parameters:</br>
+        -instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.</br>
+        -value: Value that is typed by user.
+* onReplied: Can be set as a function that returns a jquery Deferred object. Is triggered when replying to a comment.</br>
+    Parameters:</br>
+        -instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.</br>
+        -value: Value that is typed by user.</br>
+        -item: Comment that is answered to.
+* onDeleting: Can be set as a function that returns a jquery Deferred object. Is triggered  when deleting a comment.</br>
+    Parameters:</br> 
+        -instance: Instance of plugin. For example, it can be used to access the items or the plugin can be refreshed.</br>
+        -item: Comment about to be deleted.
+* onError: Is triggered on error that occurs in functions that return a jquery Deferred object. Deferred object must be used with reject function.</br>
+    Parameters: </br>
+        -data: The value sent through the reject function of the Deferred object.
 * texts: Can be configured text in plugin. A javascript object. (optional)
 
 Configuration - texts (optional)
@@ -88,23 +88,23 @@ Ayarlar - Eklenti
 * allowInsert: "true/false" değeri alabilir. Giriş yapılmasını sağlayan formun gösterilmesini sağlar. (Zorunlu değil - Default:true)
 * allowReply: "true/false" değeri alabilir. Yorumların yanıtlanabilir veya yanıtlamaz olmasını sağlar. (Zorunlu değil - Default:true)
 * allowDelete: "true/false" değeri alabilir. Yorumların silinebilir veya silinemez olmasını sağlar. (Zorunlu değil - Default:true)
-* onInserting: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Yeni kayıt eklenirken tetiklenir.
-    Parametreler: 
-        instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.
-        value: Kullanıcı tarafından girilen değerdir.
-* onReplied: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Bir yoruma cevap verildiğine tetiklenir.
-    Parametreler: 
-        instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.
-        value: Kullanıcı tarafından girilen değerdir.
-        item: Yanıt verilen yorumdur.
-* onDeleting: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Bir yorum silinirken tetiklenir.
-    Parametreler: 
-        instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.
-        item: Silinmek istenen yorumdur.
-* onError: Jquery Deffered nesnesi döndüren fonksiyonlar içinde hata olması durumunda tetiklenir. Deferred nesnesi reject fonksiyonu ile kullanılmalıdır.
-    Parametreler: 
-        data: Deferred nesnesinin reject fonksiyonu aracılığıyla gönderilen değerdir.
-        texts: Eklenti içindeki nesneler üzerinde yazıların ayarlanmasını sağlayan javascript nesnesini içerebilir. (Zorunlu değil)
+* onInserting: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Yeni kayıt eklenirken tetiklenir.</br>
+    Parametreler: </br>
+        -instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.</br>
+        -value: Kullanıcı tarafından girilen değerdir.
+* onReplied: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Bir yoruma cevap verildiğine tetiklenir.</br>
+    Parametreler: </br>
+        -instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.</br>
+        -value: Kullanıcı tarafından girilen değerdir.</br>
+        -item: Yanıt verilen yorumdur.
+* onDeleting: Jquery Deffered nesnesi döndüren bir fonksiyon içerebilir. Bir yorum silinirken tetiklenir.</br>
+    Parametreler: </br>
+        -instance: Yorum eklentisinin instance değeridir. Örn. items alanına ulaşmak için kullanılabilir veya eklenti buradan yenilenebilir.</br>
+        -item: Silinmek istenen yorumdur.
+* onError: Jquery Deffered nesnesi döndüren fonksiyonlar içinde hata olması durumunda tetiklenir. Deferred nesnesi reject fonksiyonu ile kullanılmalıdır.</br>
+    Parametreler: </br>
+        -data: Deferred nesnesinin reject fonksiyonu aracılığıyla gönderilen değerdir.</br>
+        -texts: Eklenti içindeki nesneler üzerinde yazıların ayarlanmasını sağlayan javascript nesnesini içerebilir. (Zorunlu değil)
         
 Ayarlar - texts (Zorunlu değil)
 
