@@ -4,7 +4,7 @@ With x-comment, users' comments can be displayed hierarchically and users can re
 
 Website:
 
-http://vyigity.blogspot.com/2021/01/x-comment-jquery-icin-yorum-tartsma.html
+http://vyigity.blogspot.com/2021/01/x-comment-jquery-plugin.html
 
 Dependency
 
