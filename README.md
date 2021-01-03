@@ -15,7 +15,7 @@ Dependency
 
 Configuration- Plugin
 
-* mode: Can be set as "array" or "remote". With "array" value, data are processed locally by using the javascript array given to the extension. This method can be used for batch input and output operations. The data is accessed by running the function that returns Jquery Deferred in the dataSource field with "remote" value. (required)
+* mode: Can be set as "array" or "remote". With "array" value, data is processed locally by using the javascript array given to the extension. This method can be used for batch input and output operations. The data is accessed by running the function that returns Jquery Deferred in the dataSource field with "remote" value. (required)
 * items: In "array" mode, data is given to the extension here. Also, after the data is loaded in "remote" mode, it can be read as a javascript array.(required in array mode)
 * dataSource: Can be set as a function that returns a jquery Deferred object. Data is obtained by running this function by the plugin. Data must be sent as parameter to promise resolve function.(required in remote mode)
 * authorName: The name written here is used by the plugin when responding. (required)
